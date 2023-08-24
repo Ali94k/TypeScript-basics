@@ -15,6 +15,9 @@
 enum Role {admmin = 'a', read_only = 'b', author = 'c'}
 enum Role_num {admmin = 0, read_only = 10, author = 100}
 
+let Role_dict: {[key: string]: number} = {}
+
+console.log(Role_dict['asdf'] = 13245)
 
 const person = {
     name: 'Todd',
