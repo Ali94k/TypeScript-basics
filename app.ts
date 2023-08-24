@@ -12,17 +12,15 @@
 
 // person.role.push('admin') // !!!
 
+enum Role {admmin = 'a', read_only = 'b', author = 'c'}
+enum Role_num {admmin = 0, read_only = 10, author = 100}
 
-const person: {
-    name: string
-    age: number
-    hobbies: string[]
-    role: [number, string]
-  } = {
+
+const person = {
     name: 'Todd',
     age: 27,
     hobbies: ['Sports', 'Cooking'],
-    role: [2, 'author'],
+    role: Role.admmin,
   }
   
 //   person.role.push('admin') // !!!
@@ -31,6 +29,10 @@ let favoriteActivities: (string | number)[]
 favoriteActivities = ['Sports', 1]
 
 console.log(person.name)
+
+if (person.role === Role.admmin) {
+    console.log('is admin')
+}
 
 for (const hobby of person.hobbies) {
   console.log(hobby.toLocaleUpperCase())
