@@ -1,42 +1,19 @@
-// const person: {
-//   name: string
-//   age: number
-//   hobbies: string[]
-//   role: [number, string]
-// } = {
-//   name: 'Todd',
-//   age: 27,
-//   hobbies: ['Sports', 'Cooking'],
-//   role: [2, 'author'],
-// }
+type Combinable = number | string
 
-// person.role.push('admin') // !!!
+function combine(input1: Combinable, input2: Combinable) {
+  let result
 
-enum Role {admmin = 'a', read_only = 'b', author = 'c'}
-enum Role_num {admmin = 0, read_only = 10, author = 100}
-
-let Role_dict: {[key: string]: number} = {}
-
-console.log(Role_dict['asdf'] = 13245)
-
-const person = {
-    name: 'Todd',
-    age: 27,
-    hobbies: ['Sports', 'Cooking'],
-    role: Role.admmin,
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2
+  } else {
+    result = input1.toString() + input2.toString()
   }
-  
-//   person.role.push('admin') // !!!
 
-let favoriteActivities: (string | number)[]
-favoriteActivities = ['Sports', 1]
-
-console.log(person.name)
-
-if (person.role === Role.admmin) {
-    console.log('is admin')
+  return result
 }
 
-for (const hobby of person.hobbies) {
-  console.log(hobby.toLocaleUpperCase())
-}
+const combineAges = combine(30, 26)
+console.log(combineAges)
+
+const combineNames = combine('Max', 'Anna')
+console.log(combineNames)
